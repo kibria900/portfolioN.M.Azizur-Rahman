@@ -25,7 +25,7 @@ const Navbar = () => {
             <a href="#home" className="hover:text-blue-500 transition">Home</a>
             <a href="#about" className="hover:text-blue-500 transition">About</a>
             <a href="#projects" className="hover:text-blue-500 transition">Projects</a>
-            <a href="#photo" className="hover:text-blue-500 transition">Photo Gallery</a>
+            <a href="#PhotoGallery" className="hover:text-blue-500 transition">Photo Gallery</a>
             <a href="#publication" className="hover:text-blue-500 transition">Publication</a>
             <a href="#social" className="hover:text-blue-500 transition">Social</a>
             <a href="#contact" className="hover:text-blue-500 transition">Contact</a>
@@ -57,7 +57,7 @@ const Navbar = () => {
           <a href="#projects" className="flex items-center gap-3 hover:text-blue-700 transition" onClick={toggleMenu}>
             <Folder className="w-5 h-5" /> Projects
           </a>
-          <a href="#photo" className="flex items-center gap-3 hover:text-blue-700 transition" onClick={toggleMenu}>
+          <a href="#PhotoGallery" className="flex items-center gap-3 hover:text-blue-700 transition" onClick={toggleMenu}>
             <Image className="w-5 h-5" /> Photo Gallery
           </a>
           <a href="#publication" className="flex items-center gap-3 hover:text-blue-700 transition" onClick={toggleMenu}>

@@ -35,7 +35,7 @@ const PhotoGallery = () => {
       ];
 
   return (
-    <section id="gallery" className="bg-white py-16 relative">
+    <section id="PhotoGallery" className="bg-white py-16 relative">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center text-blue-700 mb-10 border-b-4 border-blue-500 inline-block">
           📸 Photo Gallery
