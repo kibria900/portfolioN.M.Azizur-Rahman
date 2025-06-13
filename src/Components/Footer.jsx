@@ -8,17 +8,9 @@ const Footer = () => {
         <p>© {new Date().getFullYear()} N. M. Azizur Rahman. All rights reserved.</p>
 
         <div className="flex gap-4 mt-4 sm:mt-0">
+      
           <a
-            href="https://github.com/kibria900"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-800 transition"
-            aria-label="GitHub"
-          >
-            <Github size={20} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/golam-kibria-hassan/"
+            href="https://www.linkedin.com/in/n-m-azizur-rahman-a00652340/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-800 transition"

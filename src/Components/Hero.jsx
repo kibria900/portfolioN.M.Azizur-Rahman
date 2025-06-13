@@ -20,7 +20,7 @@ const Hero = () => {
         }`}
       >
         {/* Left: Text Content */}
-        <div className="text-center md:text-left flex-1">
+        <div className="text-center md:text-left flex-1 font-libre">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 dark:text-white leading-tight mb-4">
             👋 Assalamu Alaikum! I'm{" "}
             <span className="text-blue-600 dark:text-blue-400">
@@ -80,7 +80,7 @@ const Hero = () => {
               alt="Azizur Rahman Profile"
               className="w-72 h-72 object-cover rounded-full border-4 border-blue-400 dark:border-blue-600 mx-auto transition duration-300"
             />
-            <div className="mt-4 text-center">
+            <div className="mt-4 text-center font-libre">
               <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                 N. M. Azizur Rahman
               </h3>

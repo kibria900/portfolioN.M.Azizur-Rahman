@@ -53,7 +53,7 @@ const Contact = () => {
             <Mail size={18} /> Send Email
           </a>
           <a
-            href="https://www.linkedin.com/in/golam-kibria-hassan/"
+            href="https://www.linkedin.com/in/n-m-azizur-rahman-a00652340/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-full font-medium transition"
