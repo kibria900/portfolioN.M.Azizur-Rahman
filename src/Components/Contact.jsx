@@ -63,7 +63,7 @@ const Contact = () => {
         </div>
 
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} Golam Kibria Hassan. All rights reserved.
+          © {new Date().getFullYear()} N. M. Azizur Rahman. All rights reserved.
         </p>
       </div>
     </section>

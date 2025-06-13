@@ -1,47 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const photos = [
-  'https://i.ibb.co/B3cW3F6/01.jpg',
-  'https://i.ibb.co/VMfvPgD/02.jpg',
-  'https://i.ibb.co/kDcK9Cw/03.jpg',
-  'https://i.ibb.co/pn2Fz5k/04.jpg',
-  'https://i.ibb.co/hYzDKGW/05.jpg',
-  'https://i.ibb.co/Tt0Y6hH/06.jpg',
-  'https://i.ibb.co/zFSGHCV/07.jpg',
-  'https://i.ibb.co/LpYMZtC/08.jpg',
-  'https://i.ibb.co/3NMghcM/09.jpg',
-  'https://i.ibb.co/S0PRjVj/10.jpg',
-  'https://i.ibb.co/8dbjgy3/11.jpg',
-  'https://i.ibb.co/3yJ63Wj/12.jpg'
+  'https://i.ibb.co/hRDW4g6X/IMG-20150803-132858.jpg',
+  'https://i.ibb.co/JWJHDVnR/IMG-20150803-132929.jpg',
+  'https://i.ibb.co/qKgG1Mp/IMG-20150803-132959.jpg',
+  'https://i.ibb.co/1trxJwdW/IMG-20150803-133023.jpg',
+  'https://i.ibb.co/GQsHHW8c/IMG-20150803-133032.jpg',
+  'https://i.ibb.co/m5fDR2PK/IMG-20150803-133034.jpg',
+  'https://i.ibb.co/DgvyPfZ4/IMG-20150803-133036.jpg',
+  'https://i.ibb.co/rK8w6x0W/IMG-20150803-133039.jpg',
+  'https://i.ibb.co/pBTkmjbQ/IMG-20150803-133040.jpg'
 ];
 
 const PhotoGallery = () => {
-  const [currentIndex, setCurrentIndex] = useState(3);
   const [showAll, setShowAll] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   useEffect(() => {
-    let interval;
-    if (showAll) {
-      interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-      }, 1000);
+    if (!showAll) {
+      const interval = setInterval(() => {
+        setStartIndex(prevIndex => (prevIndex + 1) % photos.length);
+      }, 1000); // ১ সেকেন্ডে ছবি পরিবর্তন হবে
+      return () => clearInterval(interval);
     }
-    return () => clearInterval(interval);
   }, [showAll]);
 
   const visiblePhotos = showAll
-    ? [
-        photos[0],
-        photos[1],
-        photos[2],
-        photos[currentIndex],
-        photos[(currentIndex + 1) % photos.length],
-        photos[(currentIndex + 2) % photos.length]
-      ]
-    : photos.slice(0, 3);
+    ? photos
+    : [
+        photos[startIndex],
+        photos[(startIndex + 1) % photos.length],
+        photos[(startIndex + 2) % photos.length]
+      ];
 
   return (
-    <section id="gallery" className="bg-white py-16">
+    <section id="gallery" className="bg-white py-16 relative">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center text-blue-700 mb-10 border-b-4 border-blue-500 inline-block">
           📸 Photo Gallery
@@ -51,7 +45,8 @@ const PhotoGallery = () => {
           {visiblePhotos.map((src, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+              className="overflow-hidden rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => setSelectedPhoto(src)}
             >
               <img
                 src={src}
@@ -71,6 +66,29 @@ const PhotoGallery = () => {
           </button>
         </div>
       </div>
+
+      {/* Fullscreen modal */}
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div className="relative max-w-4xl max-h-full p-4" onClick={e => e.stopPropagation()}>
+            <button
+              className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-400"
+              onClick={() => setSelectedPhoto(null)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <img
+              src={selectedPhoto}
+              alt="Selected"
+              className="max-w-full max-h-[80vh] object-contain rounded"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

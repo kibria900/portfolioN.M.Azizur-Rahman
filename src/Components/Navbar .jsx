@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Menu, X, Home, User, Folder, Image, BookOpen, Share2, Mail } from "lucide-react";
+import {
+  Menu, X, Home, User, Folder, Image, BookOpen, Share2, Mail
+} from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +9,14 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Transparent Click Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-transparent md:hidden"
+          onClick={toggleMenu}
+        />
+      )}
+
       {/* Navbar */}
       <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">

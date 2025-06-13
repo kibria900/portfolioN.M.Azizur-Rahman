@@ -102,7 +102,7 @@ const About = () => {
         {/* 📄 Download CV Placeholder */}
         <div className="text-center">
           <a
-            href="/Azizur_Rahman_CV.pdf"
+            href="/CV.pdf"
             download
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
           >
