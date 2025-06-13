@@ -47,7 +47,7 @@ const Contact = () => {
 
         <div className="flex justify-center gap-4 flex-wrap mb-8">
           <a
-            href="mailto:kibriahassan3500@gmail.com"
+            href="mailto:azizhridoy79@gmail.com"
             className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full font-medium transition"
           >
             <Mail size={18} /> Send Email
